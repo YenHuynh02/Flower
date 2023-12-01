@@ -1,0 +1,456 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.fa-solid {
+    color: white;
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.fa-moon {
+    transition: 0.5s;
+}
+
+.fa-sun {
+    transition: 0.5s;
+}
+
+.fa-moon:hover, .fa-sun:hover {
+    scale: 1.5;
+}
+
+.fa-moon:hover {
+    text-shadow: 0 0 10px white;
+}
+
+.fa-sun:hover {
+    color: yellow;
+    text-shadow: 0 0 10px yellow;
+}
+
+.content {
+    display: flex;
+    background: linear-gradient(to top, #757abf 0%,#8583be 60%,#eab0d1 100%);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+.content div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#flower {
+    rotate: -2deg;
+    animation: flower 3s linear infinite;
+}
+
+#stem {
+    rotate: -1deg;
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 430px;
+    background: linear-gradient(to bottom, rgb(10, 178, 18), rgb(11, 49, 10, 1));
+    z-index: 0;
+}
+
+#sepal1 {
+    width: 150px;
+    height: 25px;
+    background: linear-gradient(to left, rgb(10, 178, 18), rgb(11, 49, 10, 1));
+    border-radius: 50%;
+    rotate: 15deg;
+    transform: translate(155px, -35px);
+    animation: sepal1Moving 2s infinite linear;
+}
+
+#sepal2 {
+    width: 150px;
+    height: 25px;
+    background: linear-gradient(to left, rgb(10, 178, 18), rgb(11, 49, 10, 1));
+    border-radius: 50%;
+    rotate: 165deg;
+    transform: translate(-70px, -25px);
+    animation: sepal2Moving 3s infinite linear;
+}
+
+#lip {
+    width: 75px;
+    height: 25px;
+    background: linear-gradient(yellow, white);
+    border-radius: 50%;
+    transform: translate(115px, 10px);
+    z-index: 1;
+}
+
+#lip :where(#cir1, #cir2, #cir3, #cir4, #cir5) {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(to top left, yellow, white);
+    z-index: 2;
+    opacity: 0;
+}
+
+#cir1 {
+    animation: anther 2.5s infinite linear;
+    animation-delay: 7s;
+}
+
+#cir2 {
+    animation: anther 2s infinite linear;
+    animation-delay: 7s;
+}
+
+#cir3 {
+    animation: anther 3s infinite linear;
+    animation-delay: 7s;
+}
+
+#cir4 {
+    animation: anther 5s infinite linear;
+    animation-delay: 7s;
+}
+
+#cir5 {
+    animation: anther 3.5s infinite linear;
+    animation-delay: 7s;
+}
+
+#petal1, #petal2, #petal3, #petal4 {
+    background: linear-gradient(rgb(255, 57, 90), white);
+    border: 0.5px solid white;
+    z-index: 0;
+}
+
+#petal1 {
+    width: 40px;
+    height: 150px;
+    border-radius: 50%;
+    rotate: -20deg;
+    transform: translate(-120px, -95px);
+    animation: petal1Moving 3s linear forwards;
+    animation-delay: 4s;
+}
+
+#petal2 {
+    width: 75px;
+    height: 150px;
+    border-radius: 50%;
+    transform: translate(-150px, -10px);
+    animation: petal2Moving 3s linear forwards;
+    z-index: 1;
+}
+
+#petal3 {
+    width: 75px;
+    height: 150px;
+    border-radius: 50%;
+    transform: translate(-226px, -50px);
+    animation: petal3Moving 3s linear forwards;
+    animation-delay: 5s;
+}
+
+#petal4 {
+    width: 40px;
+    height: 150px;
+    border-radius: 50%;
+    rotate: 20deg;
+    transform: translate(-240px, 35px);
+    animation: petal4Moving 3s linear forwards;
+    animation-delay: 2s;
+} 
+
+@keyframes sepal1Moving {
+    0% {
+        rotate: 15deg;
+        transform: translate(155px, -35px);
+    }
+
+    50% {
+        rotate: 10deg;
+        transform: translate(155px, -15px);
+    }
+
+    100% {
+        rotate: 15deg;
+        transform: translate(155px, -35px);
+    }
+}
+
+@keyframes sepal2Moving {
+    0% {
+        rotate: 165deg;
+        transform: translate(-70px, -25px);
+    }
+
+    50% {
+        rotate: 170deg;
+        transform: translate(-70px, -25px);
+    }
+
+    100% {
+        rotate: 165deg;
+        transform: translate(-70px, -25px);
+    }
+}
+
+@keyframes petal1Moving {
+    0% {
+        rotate: -20deg;
+        transform: translate(-120px, -95px);
+    }
+
+    50% {
+        rotate: -50deg;
+        transform: translate(-85px, -140px);
+    }
+
+    100% {
+        rotate: -75deg;
+        transform: translate(-40px, -170px);
+    }
+}
+
+@keyframes petal2Moving {
+    0% {
+        height: 150px;
+        transform: translate(-150px, -10px);
+    }
+
+    50% {
+        transform: rotateX(-90deg) translate(-150px, -100px);
+    }
+
+    100% {
+        height: 120px;
+        transform: rotateX(-180deg) translate(-150px, -70px);
+        z-index: 0;
+    }
+}
+
+@keyframes petal3Moving {
+    0% {
+        transform: translate(-226px, -50px);
+    }
+
+    50% {
+        transform: translate(-226px, -50px) rotateX(20deg);
+    }
+
+    100% {
+        transform: translate(-226px, -50px) rotateX(35deg);
+    }
+}
+
+@keyframes petal4Moving {
+    0% {
+        rotate: 20deg;
+        transform: translate(-240px, 35px);
+    }
+
+    50% {
+        rotate: 50deg;
+        transform: translate(-155px, 145px);
+    }
+
+    100% {
+        rotate: 75deg;
+        transform: translate(-60px, 195px);
+    }
+}
+
+@keyframes flower {
+    0% {
+        rotate: -2deg;
+    }
+
+    50% {
+        rotate: 2deg;
+    }
+
+    100% {
+        rotate: -2deg;
+    }
+}
+
+@keyframes anther {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content div {
+        width: 400px;
+    }
+
+    #sepal1, #sepal2 {
+        width: 400px;
+    }
+
+    #sepal1 {
+        transform: translate(110px, -10px);
+        animation: sepal1 2s infinite linear;
+    }
+
+    #sepal2 {
+        transform: translate(-50px, -35px);
+        animation: sepal2 3s infinite linear;
+    }
+
+    #lip {
+        width: 200px;
+        transform: translate(85px, 20px);
+    }
+
+    @keyframes sepal1 {
+        0% {
+            rotate: 15deg;
+            transform: translate(110px, -10px);
+        }
+    
+        50% {
+            rotate: 10deg;
+            transform: translate(110px, 5px);
+        }
+    
+        100% {
+            rotate: 15deg;
+            transform: translate(110px, -10px);
+        }
+    }
+
+    @keyframes sepal2 {
+        0% {
+            rotate: 165deg;
+            transform: translate(-50px, -35px);
+        }
+    
+        50% {
+            rotate: 170deg;
+            transform: translate(-50px, -35px);
+        }
+    
+        100% {
+            rotate: 165deg;
+            transform: translate(-50px, -35px);
+        }
+    }
+
+    #petal1, #petal4 {
+        width: 150px;
+    }
+    
+    #petal2, #petal3 {
+        width: 250px;
+    }
+
+    #petal1 {
+        transform: translate(-70px, -70px);
+        animation: petal1 3s linear forwards;
+        animation-delay: 4s;
+    }
+
+    #petal2 {
+        transform: translate(-90px, 0px);
+        animation: petal2 3s linear forwards;
+    }
+
+    #petal3 {
+        transform: translate(-145px, -40px);
+        animation: petal3 3s linear forwards;
+        animation-delay: 5s;
+    }
+
+    #petal4 {
+        transform: translate(-150px, 15px);
+        animation: petal4 3s linear forwards;
+        animation-delay: 2s;
+    }
+
+    @keyframes petal1 {
+        0% {
+            rotate: -20deg;
+            transform: translate(-70px, -70px);
+        }
+    
+        50% {
+            rotate: -50deg;
+            transform: translate(-60px, -100px);
+        }
+    
+        100% {
+            rotate: -75deg;
+            transform: translate(-40px, -110px);
+        }
+    }
+
+    @keyframes petal2 {
+        0% {
+            height: 150px;
+            transform: translate(-90px, 0px);
+        }
+    
+        50% {
+            transform: rotateX(-90deg) translate(-90px, -100px);
+        }
+    
+        100% {
+            height: 120px;
+            transform: rotateX(-180deg) translate(-90px, -80px);
+            z-index: 0;
+        }
+    }
+
+    @keyframes petal3 {
+        0% {
+            transform: translate(-145px, -40px);
+        }
+    
+        50% {
+            transform: translate(-145px, -40px) rotateX(20deg);
+        }
+    
+        100% {
+            transform: translate(-145px, -40px) rotateX(35deg);
+        }
+    }
+
+    @keyframes petal4 {
+        0% {
+            rotate: 20deg;
+            transform: translate(-150px, 15px);
+        }
+    
+        50% {
+            rotate: 50deg;
+            transform: translate(-90px, 80px);
+        }
+    
+        100% {
+            rotate: 75deg;
+            transform: translate(-20px, 115px);
+        }
+    }
+}
