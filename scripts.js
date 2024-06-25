@@ -4,7 +4,6 @@ var mode = document.getElementById("mode");
 var petal = ["petal1", "petal2", "petal3", "petal4"];
 var cir = ["cir1", "cir2", "cir3", "cir4", "cir5"];
 
-
 function displayDark() {
     if (mode.classList.contains("fa-sun")) {
         setTimeout(function() {
